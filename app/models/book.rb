@@ -1,3 +1,3 @@
 class Book < ApplicationRecord
-  beongs_to :uesr
+  beongs_to :user
 end
