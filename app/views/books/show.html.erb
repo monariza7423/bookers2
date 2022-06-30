@@ -25,6 +25,9 @@
 <% end %>
 
 <h1>Book detail</h1>
-<%= image_tag @books.user.get_profile_image(100,100) %>
-<%= @books.title %>
+<%= link_to user_path(@books.user.id) do %>
+  <%= image_tag @books.user.get_profile_image(100,100) %>
+  <%= @books.user.name %>
+<% end %>
+<%= link_to @books.title, book_path(@books.id) %>
 <%= @books.body %>
