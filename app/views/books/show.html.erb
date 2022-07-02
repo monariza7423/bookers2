@@ -8,3 +8,5 @@
 <% end %>
 <%= link_to @books.title, book_path(@books.id) %>
 <%= @books.body %>
+<%= link_to "Edit", edit_book_path(@books.id) %>
+<%= link_to "Destroy", book_path(@books), method: :delete, "data-confirm" => "本当に消しますか？" %>

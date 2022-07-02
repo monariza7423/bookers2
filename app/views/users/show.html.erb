@@ -12,7 +12,10 @@
           <% end %>
         </td>
         <td>
-          <%= link_to @books.title, book_path(@books.id) %>
+          <%= link_to book.title, book_path(book.id) %>
+        </td>
+        <td>
+          <%= book.body %>
         </td>
       </tr>
     </tbody>
