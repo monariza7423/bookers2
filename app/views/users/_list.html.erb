@@ -6,19 +6,24 @@
       <table class="table">
         <tbody>
           <tr>
-            <th>name<%= user.name %></th>
+            <th>name:<%= user.name %></th>
             <th></th>
           </tr>
           <tr>
-            <th>introduction<%= user.introduction %></th>
+            <th>introduction:<%= user.introduction %></th>
             <th></th>
           </tr>
         </tbody>
       </table>
       <div class="row">
         <% if user == current_user %>
-          <a class="btn btn-outline-secondary btn-block"></a>
-          <%= link_to "編集", edit_user_path(user) %>
+          <%= link_to edit_user_path(user), class:'btn btn-outline-secondary btn-block' do %>
+            <i class="fas fa-user-edit"></i>
+          <% end %>
+        <% else %>
+           <%= link_to edit_user_path(user), class:'btn btn-outline-secondary btn-block' do %>
+            <i class="fas fa-user-edit"></i>
+          <% end %>
         <% end %>
       </div>
 
@@ -34,8 +39,9 @@
         <%= f.text_area :body %>
 
         <div class="form-group">
-          <a class="btn btn-success btn-block"></a>
-          <%= f.submit 'Create Book' %>
+
+          <%= f.submit 'Create Book', class: 'btn btn-success btn-block' %>
+
         </div>
       <% end %>
 
