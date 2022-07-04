@@ -19,8 +19,16 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to root_path do %>
-                  <i class="fas fa-home-lg"></i>Home
+                <% if user_signed_in? %>
+                 <%= link_to user_path(current_user) do %>
+                   <i class="fas fa-home-lg"></i>
+                    Home
+                  <% end %>
+                <% else %>
+                  <%= link_to root_path do %>
+                    <i class="fas fa-home-lg"></i>
+                    Home
+                  <% end %>
                 <% end %>
               </li>
               <!--User-->
@@ -72,6 +80,8 @@
         </div>
       </nav>
     </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
     <%= yield %>
 
