@@ -1,6 +1,6 @@
 
   <% if @book.errors.any? %>
-    <%= @book.errors.count %>件のエラーが発生しました
+    <%= @book.errors.count %>errors prohibited this obj from being saved:
     <ul>
       <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -9,7 +9,7 @@
   <% end %>
 
 
-<h1>Editting Book</h1>
+<h1>Editing Book</h1>
 
 <%= form_with model: @book do |f| %>
   <p>Title</p>
